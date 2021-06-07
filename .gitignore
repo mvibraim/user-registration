@@ -8,6 +8,8 @@ pom.xml.asc
 *.class
 /.lein-*
 /.nrepl-port
-/.prepl-port
+/.calva
+/.lsp
 .hgignore
 .hg/
+.DS_Store

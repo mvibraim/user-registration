@@ -9,8 +9,7 @@
                                           "Um mundo financeiro sem complexidades")
                        (model/novo-select [(model/novo-combo-item "Brasil" "br")
                                            (model/novo-combo-item "Mexico" "mx")
-                                           (model/novo-combo-item "Colombia" "cl")])
-                       )
+                                           (model/novo-combo-item "Colombia" "cl")]))
         bottom (conj clojure.lang.PersistentQueue/EMPTY (model/novo-button "Continuar"))]
     (model/nova-pagina children bottom)))
 
@@ -22,7 +21,7 @@
                                           "precisamos do seu CPF para validar os dados")
                        (model/novo-input "string"
                                          "cpf"))
-        
+
         bottom (conj clojure.lang.PersistentQueue/EMPTY
                      (model/novo-button "Continuar"))]
     (model/nova-pagina children bottom)))
@@ -58,10 +57,3 @@
   []
   (let [paginas (conj clojure.lang.PersistentQueue/EMPTY (montar-main-br) (montar-cpf) (montar-nome-br) (montar-email-br))]
     {:paginas paginas}))
-
-(defn registration-sucess
-  "define a registration with sucess"
-  [])
-
-(defn registration-fail
-  "define a registration with deny"  [])

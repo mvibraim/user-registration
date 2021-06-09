@@ -19,3 +19,7 @@
     (if valid?
       (ok body)
       (unprocessable-entity))))
+
+(defn first-page [_request]
+  (let [response (pages/first-page)]
+    (ok response)))

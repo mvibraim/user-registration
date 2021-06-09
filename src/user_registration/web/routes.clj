@@ -18,7 +18,10 @@
                    ["/users" :post [interceptors/coerce-response-body
                                     interceptors/content-neg-intc
                                     (body-params/body-params)
-                                    controllers/users] :route-name :users]}))
+                                    controllers/users] :route-name :users]
+                   ["/main" :get [interceptors/coerce-response-body
+                                  interceptors/content-neg-intc
+                                  controllers/first-page] :route-name :first-page]}))
 
     (assoc this :endpoints routes))
 

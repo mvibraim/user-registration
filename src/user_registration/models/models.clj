@@ -1,10 +1,8 @@
 (ns user-registration.models.models)
 
 (defn nova-pagina [children botton]
-  {
-   :children children
-   :botton botton
-  })
+  {:children children
+   :botton botton})
 
 (defn novo-header [title subtitle]
   "Nudes Header"
@@ -22,8 +20,8 @@
 (defn novo-button
   "Nudes button"
   ([text]
-  {:type "BottomButton"
-   :text text})
+   {:type "BottomButton"
+    :text text})
   ([text action]
    {:type "BottomButton"
     :text text
@@ -35,7 +33,7 @@
   {:method method
    :uri uri})
 
-(defn novo-combo-item 
+(defn novo-combo-item
   "returns a drop down item"
   [texto valor]
   {:text texto

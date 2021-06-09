@@ -1,6 +1,6 @@
 (ns user-registration.services.pages
-  (:require [user-registration.services.brpages :as brpages]
-            [user-registration.services.mxpages :as mxpages]))
+  (:require [user-registration.services.country-pages.brpages :as brpages]
+            [user-registration.services.country-pages.mxpages :as mxpages]))
 
 (defn get-pages
   "select pages for a specific country"

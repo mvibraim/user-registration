@@ -4,8 +4,9 @@
   {:children children
    :botton botton})
 
-(defn novo-header [title subtitle]
+(defn novo-header
   "Nudes Header"
+  [title subtitle]
   {:type "Header"
    :title title
    :subtitle subtitle})

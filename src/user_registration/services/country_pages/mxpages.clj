@@ -1,12 +1,12 @@
-(ns user-registration.services.brpages
+(ns user-registration.services.country-pages.mxpages
   (:require [user-registration.models.models :as model]))
 
 (defn montar-main-br
   "devolve a pagina inicial em Pt-br"
   []
   (let [children (conj clojure.lang.PersistentQueue/EMPTY
-                       (model/novo-header "Boas-vindas ao Nubank!"
-                                          "Um mundo financeiro sem complexidades")
+                       (model/novo-header "ola muchacho Nubank!"
+                                          "Un mundo muy")
                        (model/novo-select [(model/novo-combo-item "Brasil" "br")
                                            (model/novo-combo-item "Mexico" "mx")
                                            (model/novo-combo-item "Colombia" "cl")]))
@@ -21,6 +21,8 @@
                                           "precisamos do seu CPF para validar os dados")
                        (model/novo-input "string"
                                          "cpf"))
+
+
 
         bottom (conj clojure.lang.PersistentQueue/EMPTY
                      (model/novo-button "Continuar"))]

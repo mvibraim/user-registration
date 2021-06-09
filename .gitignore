@@ -6,10 +6,13 @@ pom.xml
 pom.xml.asc
 *.jar
 *.class
+*.iml
 /.lein-*
 /.nrepl-port
 /.calva
 /.lsp
+/.idea
+/.vscode
 .hgignore
 .hg/
 .DS_Store

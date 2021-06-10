@@ -1,14 +1,14 @@
-(ns user-registration.services.country-pages.mxpages
+(ns user-registration.services.country-pages.copages
   (:require [user-registration.models.models :as models]))
 
 (defn build-document-page
   "Generates the document prompt page"
   []
   (let [children (conj clojure.lang.PersistentQueue/EMPTY
-                       (models/new-header "Cuál es tu RFC"
-                                          "necesitamos su RFC para validar los datos")
+                       (models/new-header "Cuál es tu Cual es tu Número de Identificación Nacional"
+                                          "necesitamos su Número de Identificación Nacional")
                        (models/new-input "string"
-                                         "rfc"))
+                                         "nni"))
 
 
 
@@ -61,4 +61,4 @@
   "List pages ordered by page-ordering"
   [page-ordering]
   (let [ordered-pages (map #((% page-builders)) page-ordering)]
-    {:pages ordered-pages :country-code "mx"}))
+    {:pages ordered-pages :country-code "co"}))

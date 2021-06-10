@@ -1,6 +1,7 @@
 (ns user-registration.services.pages
   (:require [user-registration.services.country-pages.brpages :as brpages]
-            [user-registration.services.country-pages.mxpages :as mxpages]))
+            [user-registration.services.country-pages.mxpages :as mxpages]
+            [user-registration.services.country-pages.copages :as copages]))
 
 (def page-ordering
   [:document
@@ -13,8 +14,8 @@
   [country-code]
   (case country-code
     "mx" (mxpages/list-ordered-pages page-ordering)
-    ;; "co" (copages/list-ordered-pages page-ordering)
-    (brpages/list-ordered-pages page-ordering)))
+    "co" (copages/list-ordered-pages page-ordering)
+    "br" (brpages/list-ordered-pages page-ordering)))
 
 (defn first-page
   "Return country selection informations"

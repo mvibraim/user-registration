@@ -11,8 +11,9 @@
     (ok response)))
 
 (defn users [request]
-  (let [body (:json-params request)]
-    (users/validation body)))
+  (let [body (:json-params request)
+        response (users/validation body)]
+    (ok response)))
 
 (defn first-page [_request]
   (let [response (pages/first-page)]

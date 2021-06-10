@@ -7,11 +7,11 @@
   (let [children (conj clojure.lang.PersistentQueue/EMPTY
                        (model/novo-header "Informe seu CPF"
                                           "precisamos do seu CPF para validar os dados")
-                       (model/novo-input "string"
-                                         "cpf"))
+                       (model/novo-input "number"
+                                         "cpf"
+                                         "000.000.000-00"))
 
-        bottom (conj clojure.lang.PersistentQueue/EMPTY
-                     (model/novo-button "Continuar"))]
+        bottom (model/novo-button "Continuar")]
     (model/nova-pagina children bottom)))
 
 (defn montar-nome-br
@@ -23,8 +23,7 @@
                        (model/novo-input "string"
                                          "name"))
 
-        bottom (conj clojure.lang.PersistentQueue/EMPTY
-                     (model/novo-button "Continuar"))]
+        bottom (model/novo-button "Continuar")]
     (model/nova-pagina children bottom)))
 
 (defn montar-email-br
@@ -36,8 +35,7 @@
                        (model/novo-input "string"
                                          "mail"))
 
-        bottom (conj clojure.lang.PersistentQueue/EMPTY
-                     (model/novo-button "Continuar" (model/nova-action "post" "/users")))]
+        bottom (model/novo-button "Continuar" (model/nova-action "post" "/users" ["Processando os dados" "Enviando seu pedido" "Concluído"]))]
     (model/nova-pagina children bottom)))
 
 (defn montar-data-nascimento 

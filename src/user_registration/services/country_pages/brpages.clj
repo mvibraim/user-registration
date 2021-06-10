@@ -1,15 +1,15 @@
 (ns user-registration.services.country-pages.brpages
   (:require [user-registration.models.models :as model]))
-
+🇧🇷
 (defn montar-main-br
-  "devolve a pagina inicial em Pt-br"
+  "devolve a pagina inicial em Pt-br "
   []
   (let [children (conj clojure.lang.PersistentQueue/EMPTY
                        (model/novo-header "Boas-vindas ao Nubank!"
                                           "Um mundo financeiro sem complexidades")
                        (model/novo-select [(model/novo-combo-item "Brasil" "br")
                                            (model/novo-combo-item "Mexico" "mx")
-                                           (model/novo-combo-item "Colombia" "cl")]))
+                                           (model/novo-combo-item "Colombia" "co")]))
         bottom (conj clojure.lang.PersistentQueue/EMPTY (model/novo-button "Continuar"))]
     (model/nova-pagina children bottom)))
 

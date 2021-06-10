@@ -1,6 +1,7 @@
 (ns user-registration.services.pages
   (:require [user-registration.services.country-pages.brpages :as brpages]
-            [user-registration.services.country-pages.mxpages :as mxpages]))
+            [user-registration.services.country-pages.mxpages :as mxpages]
+            [user-registration.services.country-pages.copages :as copages]))
 
 (defn get-pages
   "select pages for a specific country"
@@ -8,8 +9,8 @@
   (println country-code)
   (case country-code
     "mx" (mxpages/listar-paginas)
-    ;; "co" {:status 200 :body (json/write-str (copages/listar-paginas))}
-    (brpages/listar-paginas)))
+    "co" (copages/listar-paginas)
+    "br" (brpages/listar-paginas)))
 
 (defn first-page []
   {:br {:welcome "Bem vindo ao App de aquisição"

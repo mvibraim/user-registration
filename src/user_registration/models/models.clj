@@ -1,8 +1,9 @@
 (ns user-registration.models.models)
 
-(defn new-page [children bottom]
+(defn new-page [children bottom name]
   {:children children
-   :bottom bottom})
+   :bottom bottom
+   :name name})
 
 (defn new-header
   "NuDS header"

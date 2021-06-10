@@ -12,7 +12,7 @@
                                          "000.000.000-00"))
 
         bottom (models/new-button "Continuar")]
-    (models/new-page children bottom)))
+    (models/new-page children bottom "document")))
 
 (defn build-name-page
   "Generates the name prompt page"
@@ -24,7 +24,7 @@
                                          "name"))
 
         bottom (models/new-button "Continuar")]
-    (models/new-page children bottom)))
+    (models/new-page children bottom "name")))
 
 (defn build-email-page
   "Generates the email prompt page"
@@ -36,7 +36,7 @@
                                          "mail"))
 
         bottom (models/new-button "Continuar" (models/new-action "post" "/users" ["Processando os dados" "Enviando seu pedido" "Concluído"]))]
-    (models/new-page children bottom)))
+    (models/new-page children bottom "email")))
 
 (defn build-birth-date-page
   "Generates the birth date prompt page"
@@ -48,16 +48,16 @@
                                          "birthday"
                                          "00/00/0000"))
         bottom (models/new-button "Continuar")]
-    (models/new-page children bottom)))
+    (models/new-page children bottom "birth-date")))
 
 (def page-builders
   {:document build-document-page
    :name build-name-page
-   :date build-birth-date-page
+   :birth-date build-birth-date-page
    :email build-email-page})
 
-(defn listar-paginas
-  "Listar em ordem as paginas da aplicação"
+(defn list-ordered-pages
+  "List pages ordered by page-ordering"
   [page-ordering]
   (let [ordered-pages (map #((% page-builders)) page-ordering)]
     {:pages ordered-pages :country-code "br"}))

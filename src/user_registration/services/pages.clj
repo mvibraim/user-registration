@@ -5,16 +5,16 @@
 (def page-ordering
   [:document
    :name
-   :date
+   :birth-date
    :email])
 
 (defn get-pages
   "Return ordered pages for a specific country"
   [country-code]
   (case country-code
-    "mx" (mxpages/listar-paginas page-ordering)
-    ;; "co" (copages/listar-paginas page-ordering)
-    (brpages/listar-paginas page-ordering)))
+    "mx" (mxpages/list-ordered-pages page-ordering)
+    ;; "co" (copages/list-ordered-pages page-ordering)
+    (brpages/list-ordered-pages page-ordering)))
 
 (defn first-page
   "Return country selection informations"

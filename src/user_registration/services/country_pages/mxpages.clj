@@ -57,8 +57,8 @@
    :date build-birth-date-page
    :email build-email-page})
 
-(defn listar-paginas
-  "Listar em ordem as paginas da aplicação"
+(defn list-ordered-pages
+  "List pages ordered by page-ordering"
   [page-ordering]
   (let [ordered-pages (map #((% page-builders)) page-ordering)]
     {:pages ordered-pages :country-code "mx"}))

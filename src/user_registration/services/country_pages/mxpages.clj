@@ -59,5 +59,5 @@
 (defn listar-paginas
   "Listar em ordem as paginas da aplicação"
   []
-  (let [paginas (conj clojure.lang.PersistentQueue/EMPTY (montar-cpf) (montar-nome-br) (montar-email-br))]
-    {:paginas paginas}))
+  (let [paginas (conj clojure.lang.PersistentQueue/EMPTY (montar-cpf) (montar-nome-br) (montar-data-nascimento) (montar-email-br))]
+    {:pages paginas}))

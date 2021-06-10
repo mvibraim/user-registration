@@ -6,7 +6,8 @@
   component/Lifecycle
 
   (start [_this]
-    (def service-map {::http/routes (:endpoints routes)
+    (def service-map {::http/host "0.0.0.0"
+                      ::http/routes (:endpoints routes)
                       ::http/port 9000
                       ::http/type :jetty
                       ::http/join? false})

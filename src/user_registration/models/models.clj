@@ -19,7 +19,7 @@
    {:type     "Input"
     :keyboard keyboard
     :id       id
-    :format   format}))
+    :format   format})))
 
 (defn novo-button
   "Nudes button"

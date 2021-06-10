@@ -38,8 +38,26 @@
         bottom (model/novo-button "Continuar" (model/nova-action "post" "/users" ["Processando os dados" "Enviando seu pedido" "Concluído"]))]
     (model/nova-pagina children bottom)))
 
+(defn montar-data-nascimento 
+  "pagina que pede a data de nascimento"
+  []
+  (let [children (conj clojure.lang.PersistentQueue/EMPTY 
+                       (model/novo-header "Preciso da sua data de nascimento"
+                                          "indorme o dia/mes/ano")
+                       (model/novo-input "datetime"
+                                         "birthday"
+                                         "00/00/0000"))
+        bottom (conj clojure.lang.PersistentQueue/EMPTY
+                     (model/novo-button "Continuar" ))]
+    (model/nova-pagina children bottom)))
+
 (defn listar-paginas
   "Listar em ordem as paginas da aplicação"
   []
-  (let [paginas (conj clojure.lang.PersistentQueue/EMPTY (montar-cpf) (montar-nome-br) (montar-email-br))]
+  (let [paginas (conj clojure.lang.PersistentQueue/EMPTY
+                      (montar-cpf) 
+                      (montar-nome-br) 
+                      (montar-data-nascimento)
+                      (montar-email-br))]
     {:pages paginas}))
+

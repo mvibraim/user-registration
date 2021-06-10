@@ -20,7 +20,13 @@
 (defn first-page
   "Return country selection informations"
   []
-  {:br {:welcome "Bem vindo ao App de aquisição"
+  {
+   :countries [
+               {:text "Brasil" :value "br"}
+               {:text "México" :value "mx"}
+               {:text "Colômbia" :value "co"}
+              ]
+   :br {:welcome "Bem vindo ao App de aquisição"
         :select "Selecione o país"
         :start "Começar"}
    :mx {:welcome "Bienvenido a App Adquisición"

@@ -1,7 +1,6 @@
 (ns user-registration.services.country-pages.mxpages
   (:require [user-registration.models.models :as model]))
 
-
 (defn montar-cpf
   "deviolve a pagina do CPF em PT-br"
   []
@@ -57,4 +56,4 @@
   "Listar em ordem as paginas da aplicação"
   []
   (let [paginas (conj clojure.lang.PersistentQueue/EMPTY (montar-cpf) (montar-nome-br) (montar-data-nascimento) (montar-email-br))]
-    {:pages paginas}))
+    {:pages paginas :country-code "mx"}))

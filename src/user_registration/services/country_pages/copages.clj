@@ -20,7 +20,7 @@
   []
   (let [children (conj empty-queue
                        (models/new-header "Introduzca su nombre"
-                                          "Por favor ingresa tu nombre completo")
+                                          "Por favor, ingresa tu nombre completo")
                        (models/new-input "string"
                                          "name"))
         bottom (models/new-button "Continuar")]
@@ -31,7 +31,7 @@
   []
   (let [children (conj empty-queue
                        (models/new-header "Introduce tu correo electronico"
-                                          "Por favor introduzca una dirección de correo electrónico válida")
+                                          "Por favor, introduzca una dirección de correo electrónico válida")
                        (models/new-input "string"
                                          "email"))
         bottom (models/new-button "Continuar"
@@ -61,7 +61,7 @@
                        (models/new-header "Uhu! Todo bien con su registro."
                                           "Finalmente tienes el control de tu dinero!")
                        (models/new-image "chilling"))
-        bottom (models/new-button "Entendido")]
+        bottom (models/new-button "Entendido"  (models/new-go-to-home))]
     (models/new-page children bottom "approved-registration")))
 
 (defn build-denied-registration-page
@@ -71,7 +71,7 @@
                        (models/new-header "Ops! No pudimos completar su registro."
                                           "Comprueba tus datos y vuelve a intentarlo más tarde....")
                        (models/new-image "pf.ludic.others.person"))
-        bottom (models/new-button "Entendido")]
+        bottom (models/new-button "Entendido"  (models/new-go-to-home))]
     (models/new-page children bottom "denied-registration")))
 
 (def page-builders

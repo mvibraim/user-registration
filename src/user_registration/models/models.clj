@@ -39,6 +39,10 @@
    :uri    uri
    :steps  steps})
 
+(defn new-go-to-home
+  "Goto home"
+  (new-action "post" "go-to-home" []))
+
 (defn new-image
   "NuDS image"
   [src]

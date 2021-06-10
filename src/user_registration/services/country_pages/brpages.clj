@@ -7,8 +7,9 @@
   (let [children (conj clojure.lang.PersistentQueue/EMPTY
                        (model/novo-header "Informe seu CPF"
                                           "precisamos do seu CPF para validar os dados")
-                       (model/novo-input "string"
-                                         "cpf"))
+                       (model/novo-input "number"
+                                         "cpf"
+                                         "000.000.000-00"))
 
         bottom (model/novo-button "Continuar")]
     (model/nova-pagina children bottom)))

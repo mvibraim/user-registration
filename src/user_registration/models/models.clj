@@ -2,21 +2,24 @@
 
 (defn nova-pagina [children bottom]
   {:children children
-   :bottom bottom})
+   :bottom   bottom})
 
 (defn novo-header
   "Nudes Header"
   [title subtitle]
-  {:type "Header"
-   :title title
+  {:type     "Header"
+   :title    title
    :subtitle subtitle})
 
 (defn novo-input
   "NudesInput"
-  [keyboard id]
-  {:type "Input"
-   :keyboard keyboard
-   :id id})
+  ([keyboard id]
+   (novo-input keyboard id nil))
+  ([keyboard id format]
+   {:type     "Input"
+    :keyboard keyboard
+    :id       id
+    :format   format}))
 
 (defn novo-button
   "Nudes button"
@@ -24,25 +27,25 @@
    {:type "BottomButton"
     :text text})
   ([text action]
-   {:type "BottomButton"
-    :text text
+   {:type   "BottomButton"
+    :text   text
     :action action}))
 
 (defn nova-action
   "represent a action from button"
   [method uri steps]
   {:method method
-   :uri uri
-   :steps steps})
+   :uri    uri
+   :steps  steps})
 
 (defn novo-combo-item
   "returns a drop down item"
   [texto valor]
-  {:text texto
+  {:text  texto
    :value valor})
 
 (defn novo-select
   "return a select drop down"
   [combo-items]
-  {:type "combo"
+  {:type  "combo"
    :items combo-items})

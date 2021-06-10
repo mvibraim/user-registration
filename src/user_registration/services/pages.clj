@@ -21,17 +21,18 @@
   "Return country selection informations"
   []
   {
-   :countries [
-               {:text "Brasil" :value "br"}
+   :countries [{:text "Brasil" :value "br"}
                {:text "México" :value "mx"}
-               {:text "Colômbia" :value "co"}
-              ]
-   :br {:welcome "Bem vindo ao App de aquisição"
-        :select "Selecione o país"
-        :start "Começar"}
-   :mx {:welcome "Bienvenido a App Adquisición"
-        :select "Seleccionar país"
-        :start "Para comenzar"}
-   :co {:welcome "Bienvenido a App Adquisición"
-        :select "Seleccionar país"
-        :start "Para comenzar"}})
+               {:text "Colômbia" :value "co"}]
+   :br        {:welcome "Bem vindo ao App Aquisição"
+               :select  "Selecione o país"
+               :image   "pf.darkbg.horizontal.floating_card"
+               :start   "Começar"}
+   :mx        {:welcome "Bienvenido a App Adquisición"
+               :select  "Seleccionar país"
+               :image   "pf.darkbg.horizontal.floating_card"
+               :start   "Para comenzar"}
+   :co        {:welcome "Bienvenido a App Adquisición"
+               :select  "Seleccionar país"
+               :image   "pf.darkbg.horizontal.floating_card"
+               :start   "Para comenzar"}})

@@ -9,14 +9,16 @@
    :email])
 
 (defn get-pages
-  "Select pages for a specific country"
+  "Return ordered pages for a specific country"
   [country-code]
   (case country-code
     "mx" (mxpages/listar-paginas page-ordering)
     ;; "co" (copages/listar-paginas page-ordering)
     (brpages/listar-paginas page-ordering)))
 
-(defn first-page []
+(defn first-page
+  "Return country selection informations"
+  []
   {:br {:welcome "Bem vindo ao App de aquisição"
         :select "Selecione o país"
         :start "Começar"}

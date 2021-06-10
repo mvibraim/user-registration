@@ -1,60 +1,60 @@
 (ns user-registration.services.country-pages.brpages
-  (:require [user-registration.models.models :as model]))
+  (:require [user-registration.models.models :as models]))
 
-(defn montar-cpf
-  "deviolve a pagina do CPF em PT-br"
+(defn build-document-page
+  "Generates the document prompt page"
   []
   (let [children (conj clojure.lang.PersistentQueue/EMPTY
-                       (model/novo-header "Informe seu CPF"
+                       (models/new-header "Informe seu CPF"
                                           "precisamos do seu CPF para validar os dados")
-                       (model/novo-input "number"
+                       (models/new-input "number"
                                          "cpf"
                                          "000.000.000-00"))
 
-        bottom (model/novo-button "Continuar")]
-    (model/nova-pagina children bottom)))
+        bottom (models/new-button "Continuar")]
+    (models/new-page children bottom)))
 
-(defn montar-nome-br
-  "pagina do nome completo"
+(defn build-name-page
+  "Generates the name prompt page"
   []
   (let [children (conj clojure.lang.PersistentQueue/EMPTY
-                       (model/novo-header "Informe seu nome"
+                       (models/new-header "Informe seu nome"
                                           "por favor insira seu nome completo")
-                       (model/novo-input "string"
+                       (models/new-input "string"
                                          "name"))
 
-        bottom (model/novo-button "Continuar")]
-    (model/nova-pagina children bottom)))
+        bottom (models/new-button "Continuar")]
+    (models/new-page children bottom)))
 
-(defn montar-email-br
-  "pagina do nome completo"
+(defn build-email-page
+  "Generates the email prompt page"
   []
   (let [children (conj clojure.lang.PersistentQueue/EMPTY
-                       (model/novo-header "Informe seu email"
+                       (models/new-header "Informe seu email"
                                           "por favor informe um email valido")
-                       (model/novo-input "string"
+                       (models/new-input "string"
                                          "mail"))
 
-        bottom (model/novo-button "Continuar" (model/nova-action "post" "/users" ["Processando os dados" "Enviando seu pedido" "Concluído"]))]
-    (model/nova-pagina children bottom)))
+        bottom (models/new-button "Continuar" (models/new-action "post" "/users" ["Processando os dados" "Enviando seu pedido" "Concluído"]))]
+    (models/new-page children bottom)))
 
-(defn montar-data-nascimento
-  "pagina que pede a data de nascimento"
+(defn build-birth-date-page
+  "Generates the birth date prompt page"
   []
   (let [children (conj clojure.lang.PersistentQueue/EMPTY
-                       (model/novo-header "Preciso da sua data de nascimento"
+                       (models/new-header "Preciso da sua data de nascimento"
                                           "indorme o dia/mes/ano")
-                       (model/novo-input "datetime"
+                       (models/new-input "datetime"
                                          "birthday"
                                          "00/00/0000"))
-        bottom (model/novo-button "Continuar")]
-    (model/nova-pagina children bottom)))
+        bottom (models/new-button "Continuar")]
+    (models/new-page children bottom)))
 
 (def page-builders
-  {:document montar-cpf
-   :name montar-nome-br
-   :date montar-data-nascimento
-   :email montar-email-br})
+  {:document build-document-page
+   :name build-name-page
+   :date build-birth-date-page
+   :email build-email-page})
 
 (defn listar-paginas
   "Listar em ordem as paginas da aplicação"

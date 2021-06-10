@@ -1,39 +1,39 @@
 (ns user-registration.models.models)
 
-(defn nova-pagina [children bottom]
+(defn new-page [children bottom]
   {:children children
-   :bottom   bottom})
+   :bottom bottom})
 
-(defn novo-header
-  "Nudes Header"
+(defn new-header
+  "NuDS header"
   [title subtitle]
-  {:type     "Header"
-   :title    title
+  {:type "Header"
+   :title title
    :subtitle subtitle})
 
-(defn novo-input
-  "NudesInput"
+(defn new-input
+  "NuDS input"
   ([keyboard id]
-   (novo-input keyboard id nil))
+   (new-input keyboard id nil))
   ([keyboard id format]
-   {:type     "Input"
+   {:type "Input"
     :keyboard keyboard
-    :id       id
-    :format   format}))
+    :id id
+    :format format}))
 
-(defn novo-button
-  "Nudes button"
+(defn new-button
+  "NuDS button"
   ([text]
    {:type "BottomButton"
     :text text})
   ([text action]
-   {:type   "BottomButton"
-    :text   text
+   {:type "BottomButton"
+    :text text
     :action action}))
 
-(defn nova-action
-  "represent a action from button"
+(defn new-action
+  "Represents an action from button"
   [method uri steps]
   {:method method
-   :uri    uri
-   :steps  steps})
+   :uri uri
+   :steps steps})

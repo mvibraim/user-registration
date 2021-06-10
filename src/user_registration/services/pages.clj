@@ -2,13 +2,19 @@
   (:require [user-registration.services.country-pages.brpages :as brpages]
             [user-registration.services.country-pages.mxpages :as mxpages]))
 
+(def page-ordering
+  [:document
+   :name
+   :date
+   :email])
+
 (defn get-pages
-  "select pages for a specific country"
+  "Select pages for a specific country"
   [country-code]
   (case country-code
-    "mx" (mxpages/listar-paginas)
-    ;; "co" {:status 200 :body (json/write-str (copages/listar-paginas))}
-    (brpages/listar-paginas)))
+    "mx" (mxpages/listar-paginas page-ordering)
+    ;; "co" (copages/listar-paginas page-ordering)
+    (brpages/listar-paginas page-ordering)))
 
 (defn first-page []
   {:br {:welcome "Bem vindo ao App de aquisição"

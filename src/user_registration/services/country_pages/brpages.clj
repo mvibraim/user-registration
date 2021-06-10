@@ -1,6 +1,6 @@
 (ns user-registration.services.country-pages.brpages
   (:require [user-registration.models.models :as model]))
-🇧🇷
+
 (defn montar-main-br
   "devolve a pagina inicial em Pt-br "
   []

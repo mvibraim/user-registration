@@ -1,6 +1,6 @@
 (ns user-registration.services.country-pages.mxpages
   (:require [user-registration.models.models :as model]))
-🇲🇽
+
 (defn montar-main-mx
   "devolve a pagina inicial em es-mx"
   []

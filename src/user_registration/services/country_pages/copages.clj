@@ -1,7 +1,7 @@
 (ns user-registration.services.country-pages.copages
   (:require [user-registration.models.models :as model]))
 
-🇨🇴
+
 (defn montar-main-co
   "devolve a pagina inicial em es-co"
   []

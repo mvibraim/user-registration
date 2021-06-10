@@ -32,7 +32,7 @@
   []
   (let [children (conj empty-queue
                        (models/new-header "Informe seu email"
-                                          "Por favor informe um email válido")
+                                          "Por favor, informe um email válido")
                        (models/new-input "string"
                                          "email"))
         bottom (models/new-button "Continuar"
@@ -71,7 +71,7 @@
   (let [children (conj empty-queue
                        (models/new-header "Ops! Não conseguimos concluir o seu cadastro."
                                           "Verifique os seus dados e tente novamente mais tarde...")
-                       (models/new-image "pf_ludic_others_person"))
+                       (models/new-image "pf.ludic.others.person"))
         bottom (models/new-button "Entendido")]
     (models/new-page children bottom "denied-registration")))
 

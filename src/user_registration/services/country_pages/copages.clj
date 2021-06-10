@@ -70,7 +70,7 @@
   (let [children (conj empty-queue
                        (models/new-header "Ops! No pudimos completar su registro."
                                           "Comprueba tus datos y vuelve a intentarlo más tarde....")
-                       (models/new-image "pf_ludic_others_person"))
+                       (models/new-image "pf.ludic.others.person"))
         bottom (models/new-button "Entendido")]
     (models/new-page children bottom "denied-registration")))
 

@@ -9,4 +9,5 @@
    :routes (routes/new-routes)
    :server (component/using (server/new-server) [:routes])))
 
-(component/start (component-system))
+(defn -main [& args]
+  (component/start (component-system)))

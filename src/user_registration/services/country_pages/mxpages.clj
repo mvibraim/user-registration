@@ -54,6 +54,19 @@
                      (model/novo-button "Continuar" (model/nova-action "post" "/register")))]
     (model/nova-pagina children bottom)))
 
+(defn montar-data-nascimento
+  "pagina que pede a data de nascimento"
+  []
+  (let [children (conj clojure.lang.PersistentQueue/EMPTY
+                       (model/novo-header "Necesito tu fecha de nacimiento"
+                                          "informar el día / mes / año")
+                       (model/novo-input "datetime"
+                                         "birthday"
+                                         "00/00/0000"))
+        bottom (conj clojure.lang.PersistentQueue/EMPTY
+                     (model/novo-button "Continuar"))]
+    (model/nova-pagina children bottom)))
+
 (defn listar-paginas
   "Listar em ordem as paginas da aplicação"
   []

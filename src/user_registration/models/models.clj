@@ -13,10 +13,15 @@
 
 (defn novo-input
   "NudesInput"
-  [keyboard id]
-  {:type "Input"
-   :keyboard keyboard
-   :id id})
+  ([keyboard id]
+   {:type "Input"
+    :keyboard keyboard
+    :id id})
+  ([keyboard id format]
+   {:type "Input"
+    :keyboard keyboard
+    :id id
+    :format format}))
 
 (defn novo-button
   "Nudes button"

@@ -37,15 +37,3 @@
   {:method method
    :uri    uri
    :steps  steps})
-
-(defn novo-combo-item
-  "returns a drop down item"
-  [texto valor]
-  {:text  texto
-   :value valor})
-
-(defn novo-select
-  "return a select drop down"
-  [combo-items]
-  {:type  "combo"
-   :items combo-items})

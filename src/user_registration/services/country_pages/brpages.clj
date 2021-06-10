@@ -47,8 +47,7 @@
                        (model/novo-input "datetime"
                                          "birthday"
                                          "00/00/0000"))
-        bottom (conj clojure.lang.PersistentQueue/EMPTY
-                     (model/novo-button "Continuar" ))]
+        bottom (model/novo-button "Continuar" )]
     (model/nova-pagina children bottom)))
 
 (defn listar-paginas

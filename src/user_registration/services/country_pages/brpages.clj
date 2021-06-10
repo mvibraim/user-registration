@@ -32,7 +32,7 @@
   []
   (let [children (conj empty-queue
                        (models/new-header "Informe seu email"
-                                          "Por favor informe um email válido")
+                                          "Por favor, informe um email válido")
                        (models/new-input "string"
                                          "email"))
         bottom (models/new-button "Continuar"

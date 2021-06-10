@@ -20,7 +20,7 @@
   []
   (let [children (conj empty-queue
                        (models/new-header "Introduzca su nombre"
-                                          "Por favor ingresa tu nombre completo")
+                                          "Por favor, ingresa tu nombre completo")
                        (models/new-input "string"
                                          "name"))
         bottom (models/new-button "Continuar")]
@@ -31,7 +31,7 @@
   []
   (let [children (conj empty-queue
                        (models/new-header "Introduce tu correo electronico"
-                                          "Por favor introduzca una dirección de correo electrónico válida")
+                                          "Por favor, introduzca una dirección de correo electrónico válida")
                        (models/new-input "string"
                                          "email"))
         bottom (models/new-button "Continuar"

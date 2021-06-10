@@ -62,7 +62,7 @@
                        (models/new-header "Uhu! Tudo certo com o seu cadastro."
                                           "Finalmente você no controle do seu dinheiro!")
                        (models/new-image "chilling"))
-        bottom (models/new-button "Entendido")]
+        bottom (models/new-button "Entendido" (models/new-go-to-home))]
     (models/new-page children bottom "approved-registration")))
 
 (defn build-denied-registration-page
@@ -71,8 +71,8 @@
   (let [children (conj empty-queue
                        (models/new-header "Ops! Não conseguimos concluir o seu cadastro."
                                           "Verifique os seus dados e tente novamente mais tarde...")
-                       (models/new-image "pf_ludic_others_person"))
-        bottom (models/new-button "Entendido")]
+                       (models/new-image "pf.ludic.others.person"))
+        bottom (models/new-button "Entendido"  (models/new-go-to-home))]
     (models/new-page children bottom "denied-registration")))
 
 (def page-builders

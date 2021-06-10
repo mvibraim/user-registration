@@ -9,7 +9,7 @@
   []
   (let [children (conj empty-queue
                        (models/new-header "Informe seu CPF"
-                                          "precisamos do seu CPF para validar os seus dados")
+                                          "Precisamos do seu CPF para validar os seus dados")
                        (models/new-input "number"
                                          "document"
                                          "000.000.000-00"))
@@ -21,7 +21,7 @@
   []
   (let [children (conj empty-queue
                        (models/new-header "Informe seu nome"
-                                          "por favor insira seu nome completo")
+                                          "Por favor, insira seu nome completo")
                        (models/new-input "string"
                                          "name"))
         bottom (models/new-button "Continuar")]
@@ -32,7 +32,7 @@
   []
   (let [children (conj empty-queue
                        (models/new-header "Informe seu email"
-                                          "por favor informe um email válido")
+                                          "Por favor informe um email válido")
                        (models/new-input "string"
                                          "email"))
         bottom (models/new-button "Continuar"

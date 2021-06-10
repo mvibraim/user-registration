@@ -9,7 +9,7 @@
   []
   (let [children (conj empty-queue
                        (models/new-header "Cuál es tu Número de Identificación Nacional"
-                                          "necesitamos su Número de Identificación Nacional")
+                                          "Necesitamos su Número de Identificación Nacional")
                        (models/new-input "string"
                                          "document"))
         bottom (models/new-button "Continuar")]
@@ -20,7 +20,7 @@
   []
   (let [children (conj empty-queue
                        (models/new-header "Introduzca su nombre"
-                                          "por favor ingresa tu nombre completo")
+                                          "Por favor ingresa tu nombre completo")
                        (models/new-input "string"
                                          "name"))
         bottom (models/new-button "Continuar")]
@@ -47,7 +47,7 @@
   []
   (let [children (conj empty-queue
                        (models/new-header "Necesitamos tu fecha de nacimiento"
-                                          "informar el día/mes/año")
+                                          "Informar el día/mes/año")
                        (models/new-input "datetime"
                                          "birthday"
                                          "00/00/0000"))

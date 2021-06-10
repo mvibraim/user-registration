@@ -13,8 +13,7 @@
 
 
 
-        bottom (conj clojure.lang.PersistentQueue/EMPTY
-                     (model/novo-button "Continuar"))]
+        bottom (model/novo-button "Continuar")]
     (model/nova-pagina children bottom)))
 
 (defn montar-nome-br
@@ -26,8 +25,7 @@
                        (model/novo-input "string"
                                          "name"))
 
-        bottom (conj clojure.lang.PersistentQueue/EMPTY
-                     (model/novo-button "Continuar"))]
+        bottom (model/novo-button "Continuar")]
     (model/nova-pagina children bottom)))
 
 (defn montar-email-br
@@ -39,8 +37,7 @@
                        (model/novo-input "string"
                                          "mail"))
 
-        bottom (conj clojure.lang.PersistentQueue/EMPTY
-                     (model/novo-button "Continuar" (model/nova-action "post" "/users")))]
+        bottom (model/novo-button "Continuar" (model/nova-action "post" "/users" ["Procesando los datos" "Enviando su pedido" "Concluido"]))]
     (model/nova-pagina children bottom)))
 
 (defn listar-paginas

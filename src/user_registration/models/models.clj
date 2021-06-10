@@ -1,8 +1,8 @@
 (ns user-registration.models.models)
 
-(defn nova-pagina [children botton]
+(defn nova-pagina [children bottom]
   {:children children
-   :botton botton})
+   :bottom bottom})
 
 (defn novo-header
   "Nudes Header"
@@ -30,9 +30,10 @@
 
 (defn nova-action
   "represent a action from button"
-  [method uri]
+  [method uri steps]
   {:method method
-   :uri uri})
+   :uri uri
+   :steps steps})
 
 (defn novo-combo-item
   "returns a drop down item"

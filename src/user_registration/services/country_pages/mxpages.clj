@@ -12,9 +12,6 @@
                                           "necesitamos su RFC para validar los datos")
                        (models/new-input "string"
                                          "rfc"))
-
-
-
         bottom (models/new-button "Continuar")]
     (models/new-page children bottom "document")))
 
@@ -26,7 +23,6 @@
                                           "por favor ingresa tu nombre completo")
                        (models/new-input "string"
                                          "name"))
-
         bottom (models/new-button "Continuar")]
     (models/new-page children bottom "name")))
 
@@ -38,7 +34,6 @@
                                           "Por favor introduzca una dirección de correo electrónico válida")
                        (models/new-input "string"
                                          "mail"))
-
         bottom (models/new-button "Continuar" (models/new-action "post" "/users" ["Procesando los datos" "Enviando su pedido" "Concluido"]))]
     (models/new-page children bottom "email")))
 
@@ -61,7 +56,6 @@
                        (models/new-header "Uhu! Todo bien con su registro."
                                           "Finalmente tienes el control de tu dinero!")
                        (models/new-image "chilling"))
-
         bottom (models/new-button "Entendido")]
     (models/new-page children bottom "approved-registration")))
 
@@ -72,7 +66,6 @@
                        (models/new-header "Ops! No pudimos completar su registro."
                                           "Comprueba tus datos y vuelve a intentarlo más tarde....")
                        (models/new-image "pf_ludic_others_person"))
-
         bottom (models/new-button "Entendido")]
     (models/new-page children bottom "denied-registration")))
 

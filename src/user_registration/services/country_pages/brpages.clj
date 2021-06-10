@@ -34,7 +34,7 @@
   []
   (let [children (conj empty-queue
                        (models/new-header "Informe seu email"
-                                          "por favor informe um email valido")
+                                          "por favor informe um email válido")
                        (models/new-input "string"
                                          "mail"))
 
@@ -45,8 +45,8 @@
   "Generates the birth date prompt page"
   []
   (let [children (conj empty-queue
-                       (models/new-header "Preciso da sua data de nascimento"
-                                          "indorme o dia/mes/ano")
+                       (models/new-header "Precisamos da sua data de nascimento"
+                                          "informe o dia/mês/ano")
                        (models/new-input "datetime"
                                          "birthday"
                                          "00/00/0000"))

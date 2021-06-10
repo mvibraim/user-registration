@@ -9,11 +9,10 @@
   []
   (let [children (conj empty-queue
                        (models/new-header "Informe seu CPF"
-                                          "precisamos do seu CPF para validar os dados")
+                                          "precisamos do seu CPF para validar os seus dados")
                        (models/new-input "number"
-                                         "cpf"
+                                         "document"
                                          "000.000.000-00"))
-
         bottom (models/new-button "Continuar")]
     (models/new-page children bottom "document")))
 
@@ -25,7 +24,6 @@
                                           "por favor insira seu nome completo")
                        (models/new-input "string"
                                          "name"))
-
         bottom (models/new-button "Continuar")]
     (models/new-page children bottom "name")))
 
@@ -36,9 +34,13 @@
                        (models/new-header "Informe seu email"
                                           "por favor informe um email válido")
                        (models/new-input "string"
-                                         "mail"))
-
-        bottom (models/new-button "Continuar" (models/new-action "post" "/users" ["Processando os dados" "Enviando seu pedido" "Concluído"]))]
+                                         "email"))
+        bottom (models/new-button "Continuar"
+                                  (models/new-action "post"
+                                                     "/users"
+                                                     ["Processando os dados"
+                                                      "Enviando seu pedido"
+                                                      "Concluído"]))]
     (models/new-page children bottom "email")))
 
 (defn build-birth-date-page
@@ -46,7 +48,7 @@
   []
   (let [children (conj empty-queue
                        (models/new-header "Precisamos da sua data de nascimento"
-                                          "informe o dia/mês/ano")
+                                          "Informe o dia/mês/ano")
                        (models/new-input "datetime"
                                          "birthday"
                                          "00/00/0000"))
@@ -60,7 +62,6 @@
                        (models/new-header "Uhu! Tudo certo com o seu cadastro."
                                           "Finalmente você no controle do seu dinheiro!")
                        (models/new-image "chilling"))
-
         bottom (models/new-button "Entendido")]
     (models/new-page children bottom "approved-registration")))
 
@@ -71,7 +72,6 @@
                        (models/new-header "Ops! Não conseguimos concluir o seu cadastro."
                                           "Verifique os seus dados e tente novamente mais tarde...")
                        (models/new-image "pf_ludic_others_person"))
-
         bottom (models/new-button "Entendido")]
     (models/new-page children bottom "denied-registration")))
 

@@ -11,7 +11,7 @@
                        (models/new-header "Cuál es tu RFC"
                                           "necesitamos su RFC para validar los datos")
                        (models/new-input "string"
-                                         "rfc"))
+                                         "document"))
         bottom (models/new-button "Continuar")]
     (models/new-page children bottom "document")))
 
@@ -33,16 +33,21 @@
                        (models/new-header "Introduce tu correo electronico"
                                           "Por favor introduzca una dirección de correo electrónico válida")
                        (models/new-input "string"
-                                         "mail"))
-        bottom (models/new-button "Continuar" (models/new-action "post" "/users" ["Procesando los datos" "Enviando su pedido" "Concluido"]))]
+                                         "email"))
+        bottom (models/new-button "Continuar"
+                                  (models/new-action "post"
+                                                     "/users"
+                                                     ["Procesando los datos"
+                                                      "Enviando su pedido"
+                                                      "Concluido"]))]
     (models/new-page children bottom "email")))
 
 (defn build-birth-date-page
   "Generates the birth date prompt page"
   []
   (let [children (conj empty-queue
-                       (models/new-header "Necesito tu fecha de nacimiento"
-                                          "informar el día / mes / año")
+                       (models/new-header "Necesitamos tu fecha de nacimiento"
+                                          "informar el día/mes/año")
                        (models/new-input "datetime"
                                          "birthday"
                                          "00/00/0000"))

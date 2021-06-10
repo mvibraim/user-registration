@@ -50,12 +50,14 @@
         bottom (model/novo-button "Continuar")]
     (model/nova-pagina children bottom)))
 
+(def page-builders
+  {:document montar-cpf
+   :name montar-nome-br
+   :date montar-data-nascimento
+   :email montar-email-br})
+
 (defn listar-paginas
   "Listar em ordem as paginas da aplicação"
-  []
-  (let [paginas (conj clojure.lang.PersistentQueue/EMPTY
-                      (montar-cpf)
-                      (montar-nome-br)
-                      (montar-data-nascimento)
-                      (montar-email-br))]
-    {:pages paginas :country-code "br"}))
+  [page-ordering]
+  (let [ordered-pages (map #((% page-builders)) page-ordering)]
+    {:pages ordered-pages :country-code "br"}))

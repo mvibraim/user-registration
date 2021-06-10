@@ -1,18 +1,6 @@
 (ns user-registration.services.country-pages.brpages
   (:require [user-registration.models.models :as model]))
 
-(defn montar-main-br
-  "devolve a pagina inicial em Pt-br"
-  []
-  (let [children (conj clojure.lang.PersistentQueue/EMPTY
-                       (model/novo-header "Boas-vindas ao Nubank!"
-                                          "Um mundo financeiro sem complexidades")
-                       (model/novo-select [(model/novo-combo-item "Brasil" "br")
-                                           (model/novo-combo-item "Mexico" "mx")
-                                           (model/novo-combo-item "Colombia" "cl")]))
-        bottom (conj clojure.lang.PersistentQueue/EMPTY (model/novo-button "Continuar"))]
-    (model/nova-pagina children bottom)))
-
 (defn montar-cpf
   "deviolve a pagina do CPF em PT-br"
   []
@@ -49,7 +37,7 @@
                                          "mail"))
 
         bottom (conj clojure.lang.PersistentQueue/EMPTY
-                     (model/novo-button "Continuar" (model/nova-action "post" "/register")))]
+                     (model/novo-button "Continuar" (model/nova-action "post" "/users")))]
     (model/nova-pagina children bottom)))
 
 (defn montar-data-nascimento 
@@ -69,9 +57,9 @@
   "Listar em ordem as paginas da aplicação"
   []
   (let [paginas (conj clojure.lang.PersistentQueue/EMPTY
-                      (montar-main-br) 
                       (montar-cpf) 
                       (montar-nome-br) 
                       (montar-data-nascimento)
                       (montar-email-br))]
-    {:paginas paginas}))
+    {:pages paginas}))
+
